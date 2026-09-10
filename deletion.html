@@ -3,170 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Account & Data Deletion Request - Tabang</title>
+  <title>Account & Data Deletion - Tabang</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/logo_bb_small.png">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-brand">
         <img src="assets/logo_bb.png" alt="Tabang Logo" class="nav-logo">
-        <div>
-          <div class="nav-brand-title">
-            TABANG
-            <span class="pill-badge pill-pilot">PILOT PLATFORM</span>
-          </div>
-          <div class="nav-brand-subtitle">Emergency Response Ecosystem</div>
-        </div>
+        <span class="nav-brand-text">Tabang Legal</span>
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Hub</a></li>
-          <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
-          <li><a href="terms.html" class="nav-link">Terms of Service</a></li>
-          <li><a href="deletion.html" class="nav-btn-highlight active">Data Deletion</a></li>
+          <li><a href="index.html" class="nav-link">Overview</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+          <li><a href="deletion.html" class="nav-link-cta active">Data Deletion</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN WRAPPER -->
+  <!-- MAIN CONTENT -->
   <main class="main-wrapper">
-    <div class="hero-header">
-      <div class="pill-badge pill-red">DATA SUBJECT ERASURE PORTAL</div>
+    <div class="header">
+      <div class="header-tag">Data Subject Rights (RA 10173 Sec. 16)</div>
       <h1>Account & Data Deletion Request</h1>
       <p>
-        In compliance with <strong>Google Play Console Account Deletion Policies</strong>, <strong>Apple App Store Review Guidelines 5.1.1(v)</strong>, and <strong>Section 16 of the Philippine Data Privacy Act of 2012 (RA 10173)</strong>, this portal enables pilot participants, citizens, and responders to request the permanent deletion and unlinking of their mobile account and associated personal telemetry.
+        In accordance with <strong>Google Play Console policies</strong>, <strong>Apple App Store Guideline 5.1.1(v)</strong>, and the <strong>Philippine Data Privacy Act</strong>, users may request the permanent deletion of their account credentials, medical notes, and device tokens.
       </p>
-      <div class="meta-info">
-        <div class="meta-item"><span>Processing SLA:</span> <strong style="color: #34d399;">48 - 72 Business Hours</strong></div>
-        <div class="meta-item"><span>Statutory Framework:</span> <strong>RA 10173 Section 16 (Right to Erasure)</strong></div>
+      <div class="header-meta">
+        <span>Turnaround SLA: 48 - 72 Business Hours</span>
+        <span>•</span>
+        <span>Contact: tabang.emergency@gmail.com</span>
       </div>
     </div>
 
-    <!-- SUBMISSION STATUS NOTICE CONTAINER -->
     <div id="deletionStatus"></div>
 
-    <!-- INTERACTIVE SUBMISSION FORM CARD -->
-    <section class="legal-card" style="border-color: rgba(220, 38, 38, 0.3);">
-      <h2>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-        Submit Deletion & Unlinking Request
-      </h2>
-      <p>
-        Please enter the identifier associated with your Tabang mobile client installation. Our compliance office will process your request, terminate active cloud sessions, and unlink hardware identifiers.
-      </p>
+    <!-- MINIMALIST FORM BOX -->
+    <div class="form-box">
+      <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 8px;">Submit Deletion Request</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Enter your registered details below to initiate account erasure.</p>
 
       <form id="deletionForm">
         <div class="form-group">
-          <label class="form-label" for="userIdentifier">Registered Username or Mobile Phone Number *</label>
+          <label class="form-label" for="userIdentifier">Registered Username or Mobile Number *</label>
           <input type="text" id="userIdentifier" class="form-input" placeholder="e.g., 09171234567 or juan_delacruz" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="lguName">Associated Pilot LGU / City (Optional)</label>
-          <input type="text" id="lguName" class="form-input" placeholder="e.g., Pilot Sandbox, Davao, Zamboanga, etc.">
+          <label class="form-label" for="lguName">Pilot LGU or Region (Optional)</label>
+          <input type="text" id="lguName" class="form-input" placeholder="e.g., Pilot Sandbox, Davao, etc.">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="requestType">Scope of Deletion Request *</label>
+          <label class="form-label" for="requestType">Scope of Request</label>
           <select id="requestType" class="form-select">
-            <option value="FULL_ACCOUNT_DELETION">Full Account Deletion (Remove credentials, medical dossier, and device linkage)</option>
-            <option value="DEVICE_UNLINK">Device Unlinking (Disconnect smartphone and clear FCM push tokens)</option>
-            <option value="HEALTH_TELEMETRY_ERASURE">Medical Dossier Erasure (Clear blood type and medical history notes)</option>
+            <option value="FULL_ACCOUNT_DELETION">Full Account Deletion (Credentials, medical notes, and device tokens)</option>
+            <option value="DEVICE_UNLINK">Device Unlinking (Sever push notifications & disconnect device)</option>
+            <option value="MEDICAL_NOTES_PURGE">Medical Dossier Erasure (Clear blood type & medical history)</option>
           </select>
         </div>
 
-        <div class="form-checkbox-wrapper">
-          <input type="checkbox" id="confirmCheck" class="form-checkbox" required>
-          <label class="form-checkbox-label" for="confirmCheck">
-            I understand and confirm that submitting this request will permanently disable my Tabang mobile emergency features, deactivate Continuous Protection tracking, and unlink my device credentials under Philippine RA 10173.
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirmCheck" required>
+          <label class="checkbox-label" for="confirmCheck">
+            I confirm that submitting this request will permanently disable emergency protection and unlink my device credentials under Philippine RA 10173.
           </label>
         </div>
 
-        <button type="submit" class="btn-submit">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
-          Transmit Deletion Request
-        </button>
+        <button type="submit" class="btn btn-danger">Submit Deletion Request</button>
       </form>
-    </section>
+    </div>
 
-    <!-- WHAT GETS DELETED VS WHAT IS RETAINED -->
-    <section class="legal-card">
-      <h2>Data Scope & Retention Policies</h2>
-      <p>
-        To ensure complete transparency regarding data processing and statutory record-keeping requirements:
-      </p>
-
-      <div class="data-table-wrapper">
-        <table class="data-table">
+    <!-- RETENTION DISCLOSURE -->
+    <section class="section">
+      <h2>Data Scope & Statutory Retention</h2>
+      <div class="table-wrapper">
+        <table>
           <thead>
             <tr>
               <th>Data Element</th>
               <th>Action Upon Request</th>
-              <th>Retention Justification</th>
+              <th>Justification</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Account Credentials & PIN</strong></td>
-              <td><span style="color: #f87171; font-weight: bold;">Permanently Deleted</span></td>
-              <td>Authentication credentials are revoked immediately from Supabase Auth.</td>
+              <td><span style="color: #f87171; font-weight: 600;">Permanently Deleted</span></td>
+              <td>Revoked from authentication servers immediately.</td>
             </tr>
             <tr>
               <td><strong>Medical Dossier & Blood Type</strong></td>
-              <td><span style="color: #f87171; font-weight: bold;">Permanently Deleted</span></td>
-              <td>Clinical profile notes and sensitive personal health info are expunged.</td>
+              <td><span style="color: #f87171; font-weight: 600;">Permanently Deleted</span></td>
+              <td>Sensitive health notes and profile photo are wiped.</td>
             </tr>
             <tr>
-              <td><strong>Real-Time GPS & Altitude</strong></td>
-              <td><span style="color: #f87171; font-weight: bold;">Permanently Erased</span></td>
-              <td>Live tracking telemetry and last-known location coordinates are wiped.</td>
+              <td><strong>Live GPS & Altitude</strong></td>
+              <td><span style="color: #f87171; font-weight: 600;">Permanently Erased</span></td>
+              <td>Continuous tracking and real-time coordinates wiped.</td>
             </tr>
             <tr>
               <td><strong>Device Push Token (FCM)</strong></td>
-              <td><span style="color: #f87171; font-weight: bold;">Unlinked & Destroyed</span></td>
-              <td>Device token is severed, halting all situational alert push notifications.</td>
+              <td><span style="color: #f87171; font-weight: 600;">Unlinked</span></td>
+              <td>Push notification token destroyed.</td>
             </tr>
             <tr>
-              <td><strong>Historical Closed CAD Incident Logs</strong></td>
-              <td><span style="color: #fbbf24; font-weight: bold;">Archived (Audit Vault)</span></td>
-              <td>Pursuant to <strong>RA 10173 Section 19</strong>, closed emergency case transcripts, dispatcher actions, and forensic audit timestamps are preserved for statutory legal liability and public emergency accountability.</td>
+              <td><strong>Closed CAD Incident Transcripts</strong></td>
+              <td><span style="color: #fbbf24; font-weight: 600;">Archived (Audit Vault)</span></td>
+              <td>Under RA 10173 Sec. 19 and public safety rules, historical closed dispatch transcripts are retained in an encrypted vault for municipal accountability.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- ALTERNATIVE IN-APP METHOD -->
-    <section class="legal-card">
-      <h2>How to Initiate Deletion Directly Inside the Mobile App</h2>
-      <p>
-        If you currently have the Tabang mobile application installed on your Android or iOS device, you may alternatively initiate account deactivation without using this web portal:
-      </p>
+    <!-- IN-APP INSTRUCTIONS -->
+    <section class="section">
+      <h2>In-App Deletion Alternative</h2>
+      <p>You can also initiate deactivation directly within the Tabang mobile application:</p>
       <ol>
-        <li>Open the <strong>Tabang</strong> mobile application.</li>
-        <li>Tap your <strong>Profile / Settings</strong> avatar or open the tactical menu.</li>
-        <li>Scroll to <strong>Security & Data Controls</strong>.</li>
-        <li>Select <strong>"Deactivate & Unlink Account"</strong>.</li>
+        <li>Open the <strong>Tabang</strong> mobile app.</li>
+        <li>Navigate to <strong>Profile</strong>.</li>
+        <li>Select <strong>Deactivate & Unlink Account</strong>.</li>
         <li>Enter your <strong>6-digit Security PIN</strong> to authorize deactivation.</li>
-        <li>Your local cache will be cleared and the central database session marked unlinked.</li>
       </ol>
     </section>
 
-    <!-- COMPLIANCE CONTACT -->
-    <section class="legal-card">
-      <h2>Direct Compliance Inquiries</h2>
-      <p>
-        If you experience issues submitting this form or have specific legal inquiries, contact our Data Protection Officer directly:
-      </p>
-      <div class="callout-box" style="margin-bottom: 0;">
-        <p><strong>Email:</strong> <a href="mailto:privacy@tabang.ph" style="color: #60a5fa;">privacy@tabang.ph</a> / <a href="mailto:tabang.emergency@gmail.com" style="color: #60a5fa;">tabang.emergency@gmail.com</a></p>
-        <p><strong>Subject Format:</strong> <code>[Data Deletion] - &lt;Your Username / Mobile Number&gt;</code></p>
-        <p><strong>Turnaround Time:</strong> Within 48 to 72 business hours upon identity confirmation.</p>
+    <!-- CONTACT -->
+    <section class="section">
+      <h2>Inquiries</h2>
+      <p>For questions or assistance regarding data deletion, contact:</p>
+      <div class="notice">
+        <p><strong>Email:</strong> <a href="mailto:tabang.emergency@gmail.com" style="text-decoration: underline;">tabang.emergency@gmail.com</a></p>
       </div>
     </section>
   </main>
@@ -174,17 +148,17 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
-      <ul class="footer-links">
-        <li><a href="index.html">Legal Hub</a></li>
+      <ul class="footer-nav">
+        <li><a href="index.html">Overview</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
-        <li><a href="deletion.html">Account & Data Deletion</a></li>
+        <li><a href="deletion.html">Data Deletion</a></li>
       </ul>
-      <p class="footer-disclaimer">
-        Disclaimer: Tabang Emergency Response is a private technology platform developed for pilot evaluations and local disaster risk reduction collaboration. It is not affiliated with the National Government of the Philippines or Emergency 911. Always dial 911 in direct life-threatening emergencies.
-      </p>
-      <div class="footer-copy">
-        &copy; 2026 Tabang Emergency Response. All Rights Reserved. Operating under Republic Act No. 10173 (Data Privacy Act of 2012).
+      <div class="footer-text">
+        Disclaimer: Tabang is an independent platform for pilot evaluation and local disaster risk reduction collaboration. Not affiliated with the Philippine National Government or 911. In emergencies, dial 911 directly.
+      </div>
+      <div>
+        &copy; 2026 Tabang. Republic Act No. 10173 Compliant.
       </div>
     </div>
   </footer>
